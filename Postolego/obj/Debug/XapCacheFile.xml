@@ -1,0 +1,12 @@
+﻿<xapCache source="C:\Dev\Postolego\Postolego\Bin\Debug\Postolego_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="21.12.2013 18:16:41">
+  <file source="C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll" archivePath="Postolego.dll" lastWriteTime="21.12.2013 18:16:41" />
+  <file source="C:\Dev\Postolego\Postolego\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="21.12.2013 18:16:41" />
+  <file source="C:\Dev\Postolego\Postolego\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Postolego\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="21.12.2013 18:16:41" />
+</xapCache>
