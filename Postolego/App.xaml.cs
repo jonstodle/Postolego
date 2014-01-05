@@ -29,6 +29,10 @@ namespace Postolego {
             // Phone-specific initialization
             InitializePhoneApplication();
 
+            //Set custom theme
+            ThemeManager.OverrideOptions = ThemeManagerOverrideOptions.SystemTrayAndApplicationBars;
+            ThemeManager.SetCustomTheme(App.Current.Resources.MergedDictionaries[0], Theme.Dark);
+
             // Language display initialization
             InitializeLanguage();
 

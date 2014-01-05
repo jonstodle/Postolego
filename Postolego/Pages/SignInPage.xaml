@@ -1,0 +1,45 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Postolego.Pages.SignInPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PostolegoLightBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PostolegoDarkBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,12,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Border Background="Gray">
+                    <Image Source="/Assets/ApplicationIcon.png"/>
+                </Border>
+                <TextBlock Text="Postolego" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,0,0,0"/>
+            </StackPanel>
+            <Grid Name="StartAuthGrid" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <StackPanel VerticalAlignment="Bottom">
+                    <TextBlock Text="LOG IN TO START USING POSTOLEGO" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" VerticalAlignment="Bottom"/>
+                    <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PostolegoLightBrush}" BorderBrush="{StaticResource PostolegoLightBrush}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

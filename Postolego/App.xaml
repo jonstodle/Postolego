@@ -3,11 +3,25 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:local="clr-namespace:Postolego">
 
     <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:Postolego" x:Key="LocalizedStrings"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:LocalizedStrings x:Key="LocalizedStrings"/>
+            <Color x:Key="PostolegoLightColor">#FFD4D4D4</Color>
+            <Color x:Key="PostolegoMediumColor">#FF757575</Color>
+            <Color x:Key="PostolegoDarkColor">#FF222222</Color>
+            <Color x:Key="PostolegoDeepColor">#FF100404</Color>
+            <SolidColorBrush Color="{StaticResource PostolegoLightColor}" x:Key="PostolegoLightBrush"/>
+            <SolidColorBrush Color="{StaticResource PostolegoMediumColor}" x:Key="PostolegoMediumBrush"/>
+            <SolidColorBrush Color="{StaticResource PostolegoDarkColor}" x:Key="PostolegoDarkBrush"/>
+            <SolidColorBrush Color="{StaticResource PostolegoDeepColor}" x:Key="PostolegoDeepBrush"/>
+        </ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

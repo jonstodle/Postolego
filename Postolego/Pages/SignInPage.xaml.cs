@@ -9,13 +9,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace Postolego.Pages {
-    public partial class MainPage : PhoneApplicationPage {
-        public MainPage() {
+    public partial class SignInPage : PhoneApplicationPage {
+        public SignInPage() {
             InitializeComponent();
-        }
-
-        private void ApplicationBarMenuItem_Click(object sender, EventArgs e) {
-
         }
     }
 }

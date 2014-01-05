@@ -6,30 +6,73 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
+    xmlns:rcd="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
+    xmlns:conv="clr-namespace:Postolego.Converters"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PostolegoDeepColor}">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator x:Name="ProgressBar" Text="POSTOLEGO" IsIndeterminate="False"/>
+    </shell:SystemTray.ProgressIndicator>
+
+    <phone:PhoneApplicationPage.Resources>
+        <conv:TextDependentOnSelectedIndexConverter x:Name="TDS"/>
+        <DataTemplate x:Name="TextAndImage">
+            <Grid Margin="0,0,0,12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/ApplicationIcon.png" Width="100" Grid.RowSpan="2"/>
+                <TextBlock Text="Title" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold" VerticalAlignment="Bottom"/>
+                <TextBlock Text="https://reallylongurltoawebsite.com/somethingafter" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource PostolegoMediumBrush}" VerticalAlignment="Top"/>
+            </Grid>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,12,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding SelectedIndex, ElementName=MainPivot, Converter={StaticResource TDS}}" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+            <phone:Pivot Name="MainPivot" Grid.Row="1">
+                <phone:PivotItem Margin="12,0">
+                    
+                </phone:PivotItem>
+                <phone:PivotItem Margin="12,0">
+                    
+                </phone:PivotItem>
+                <phone:PivotItem Margin="12,0">
+                    
+                </phone:PivotItem>
+            </phone:Pivot>
         </Grid>
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Mode="Minimized">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="remove ads" Click="ApplicationBarMenuItem_Click"/>
+                <shell:ApplicationBarMenuItem Text="settings" Click="ApplicationBarMenuItem_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
