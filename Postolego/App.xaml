@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:nav="clr-namespace:System.Windows.Navigation;assembly=Microsoft.Phone"
     xmlns:local="clr-namespace:Postolego">
 
     <!--Application Resources-->
@@ -23,7 +24,7 @@
             <SolidColorBrush Color="{StaticResource PostolegoDeepColor}" x:Key="PostolegoDeepBrush"/>
         </ResourceDictionary>
     </Application.Resources>
-
+    
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
         <shell:PhoneApplicationService

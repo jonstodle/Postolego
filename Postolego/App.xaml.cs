@@ -10,6 +10,7 @@ using Postolego.Resources;
 
 namespace Postolego {
     public partial class App : Application {
+        private UriMapper mapper;
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
@@ -30,7 +31,7 @@ namespace Postolego {
             InitializePhoneApplication();
 
             //Set custom theme
-            ThemeManager.OverrideOptions = ThemeManagerOverrideOptions.SystemTrayAndApplicationBars;
+            ThemeManager.OverrideOptions = ThemeManagerOverrideOptions.None;
             ThemeManager.SetCustomTheme(App.Current.Resources.MergedDictionaries[0], Theme.Dark);
 
             // Language display initialization

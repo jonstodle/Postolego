@@ -36,7 +36,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel VerticalAlignment="Bottom">
                     <TextBlock Text="LOG IN TO START USING POSTOLEGO" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" VerticalAlignment="Bottom"/>
-                    <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PostolegoLightBrush}" BorderBrush="{StaticResource PostolegoLightBrush}"/>
+                    <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}"/>
                 </StackPanel>
             </Grid>
         </Grid>

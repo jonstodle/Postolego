@@ -18,7 +18,7 @@
     shell:SystemTray.BackgroundColor="{StaticResource PostolegoDeepColor}">
 
     <shell:SystemTray.ProgressIndicator>
-        <shell:ProgressIndicator x:Name="ProgressBar" Text="POSTOLEGO" IsIndeterminate="False"/>
+        <shell:ProgressIndicator x:Name="ProgressBar" Text="POSTOLEGO" IsIndeterminate="False" IsVisible="True"/>
     </shell:SystemTray.ProgressIndicator>
 
     <phone:PhoneApplicationPage.Resources>
@@ -67,7 +67,7 @@
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar Mode="Minimized">
+        <shell:ApplicationBar Mode="Minimized" BackgroundColor="{StaticResource PostolegoDeepColor}">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="remove ads" Click="ApplicationBarMenuItem_Click"/>
                 <shell:ApplicationBarMenuItem Text="settings" Click="ApplicationBarMenuItem_Click"/>
