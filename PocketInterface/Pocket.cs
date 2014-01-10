@@ -33,6 +33,7 @@ namespace PocketInterface {
             if(string.IsNullOrWhiteSpace(ReturnUri)) {
                 throw new ArgumentException("The Return Uri has to be a non-empty string");
             }
+
             if(!HasLoginUriString) {
                 var request = PocketWebRequest.CreatePocketHttp(RequestUri);
                 using(var stream = await request.GetRequestStreamAsync()) {
@@ -47,11 +48,28 @@ namespace PocketInterface {
                 }
                 LoginUriString = string.Format(LoginUri, RequestToken, ReturnUri);
             }
+
             return LoginUriString;
         }
 
-        public void FinalizeUserLogin() {
+        public async void FinalizeUserLogin() {
+            if(!HasLoginUriString) {
+                throw new Exception("You have to make the user login first");
+            }
 
+            var request = PocketWebRequest.CreatePocketHttp(AuthorizeUri);
+            using(var stream = await request.GetRequestStreamAsync()) {
+                var requestData = Encoding.UTF8.GetBytes(new JObject(new JProperty("consumer_key", ConsumerKey), new JProperty("code", RequestToken)).ToString());
+                await stream.WriteAsync(requestData, 0, requestData.Length);
+            }
+
+            var response = await request.GetHttpResponseAsync();
+            using(var stream = response.GetResponseStream())
+            using(var reader = new StreamReader(stream)) {
+                var json = JObject.Parse(await reader.ReadToEndAsync());
+                AccessToken = json["access_token"].ToString();
+                Username = json["username"].ToString();
+            }
         }
     }
 }
