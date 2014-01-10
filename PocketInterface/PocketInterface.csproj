@@ -84,6 +84,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Pocket.cs" />
+    <Compile Include="PocketItem.cs" />
     <Compile Include="PocketWebRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
