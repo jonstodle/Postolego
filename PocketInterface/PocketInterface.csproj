@@ -86,6 +86,7 @@
     <Compile Include="Pocket.cs" />
     <Compile Include="PocketAddItem.cs" />
     <Compile Include="PocketItem.cs" />
+    <Compile Include="PocketRetrieveItem.cs" />
     <Compile Include="PocketWebRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

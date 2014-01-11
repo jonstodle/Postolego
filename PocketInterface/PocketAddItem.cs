@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace PocketInterface {
     public class PocketAddItem {
+        public enum Encoding { Encode, NotEncode }
+
         private string _consumerKey;
         private string _accessToken;
         private string _url;
@@ -35,9 +37,9 @@ namespace PocketInterface {
             return json.ToString();
         }
 
-        public string GetEncodedJsonString() {
+        public string GetJsonString(Encoding Encode) {
             var json = new JObject();
-            json.Add("url", WebUtility.UrlEncode(_url));
+            if(Encode == Encoding.Encode) json.Add("url", WebUtility.UrlEncode(_url)); else json.Add("url", _url);
             if(_title != null) json.Add("title", _title);
             if(_tags != null) json.Add("tags", _tags);
             if(_tweetId != null) json.Add("tweet_id", _tweetId);

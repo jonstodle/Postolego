@@ -21,6 +21,7 @@ namespace PocketInterface {
         public bool IsAuthenticated { get { return ConsumerKey != null && AccessToken != null; } }
         public bool HasLoginUriString { get { return LoginUriString != null; } }
         public string Username { private set; get; }
+        public string TimeStamp { private set; get; }
 
         public Pocket(string ConsumerKey) {
             if(string.IsNullOrWhiteSpace(ConsumerKey)) {
