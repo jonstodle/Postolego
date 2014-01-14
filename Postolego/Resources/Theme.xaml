@@ -96,7 +96,7 @@
 <!-- Opacity -->
 <System:Double x:Key="PhoneDarkThemeOpacity">1</System:Double>
 <System:Double x:Key="PhoneLightThemeOpacity">0</System:Double>
-<System:Double x:Key="PhonePivotUnselectedItemOpacity">0.4</System:Double>
+<System:Double x:Key="PhonePivotUnselectedItemOpacity">0</System:Double>
 
 <!-- Resolution-specific resources -->
 

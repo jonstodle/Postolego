@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rcp="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PostolegoLightBrush}"
@@ -29,7 +30,7 @@
                 </Border>
                 <TextBlock Text="Postolego" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,0,0,0"/>
             </StackPanel>
-            <Grid Name="StartAuthGrid" Grid.Row="1">
+            <Grid Name="LoginGrid" Grid.Row="1" Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="2*"/>
@@ -39,6 +40,7 @@
                     <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}"/>
                 </StackPanel>
             </Grid>
+            <rcp:RadBusyIndicator Name="LoadingIndicator" Content="LOADING" IsRunning="True" AnimationStyle="AnimationStyle5" Grid.Row="1"/>
         </Grid>
     </Grid>
 
