@@ -56,7 +56,7 @@ namespace PocketInterface {
             return LoginUriString;
         }
 
-        public async void FinalizeUserLogin() {
+        public async Task FinalizeUserLogin() {
             if(!HasLoginUriString) {
                 throw new Exception("You have to make the user login first");
             }

@@ -49,3 +49,5 @@ C:\Dev\Postolego\Postolego\Bin\Debug\Newtonsoft.Json.xml
 C:\Dev\Postolego\Postolego\obj\Debug\Pages\SignInPage.g.cs
 C:\Dev\Postolego\Postolego\Bin\Debug\JeffWilcox.PhoneThemeManager.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\JeffWilcox.PhoneThemeManager.pdb
+C:\Dev\Postolego\Postolego\Bin\Debug\PocketInterface.dll
+C:\Dev\Postolego\Postolego\Bin\Debug\PocketInterface.pdb

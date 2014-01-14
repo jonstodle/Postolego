@@ -6,12 +6,18 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:conv="clr-namespace:Postolego.Converters"
     xmlns:rcp="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PostolegoLightBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    DataContext="{StaticResource PostolegoData}">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <conv:ReverseVisibilityConverter x:Name="RVC"/>
+    </phone:PhoneApplicationPage.Resources>
 
     <Grid x:Name="LayoutRoot" Background="{StaticResource PostolegoDarkBrush}">
         <Grid.RowDefinitions>
@@ -30,14 +36,14 @@
                 </Border>
                 <TextBlock Text="Postolego" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,0,0,0"/>
             </StackPanel>
-            <Grid Name="LoginGrid" Grid.Row="1" Visibility="Collapsed">
+            <Grid Name="LoginGrid" Grid.Row="1" Visibility="{Binding Visibility, ElementName=LoadingIndicator, Converter={StaticResource RVC}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
                 <StackPanel VerticalAlignment="Bottom">
                     <TextBlock Text="LOG IN TO START USING POSTOLEGO" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" VerticalAlignment="Bottom"/>
-                    <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                    <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}" Click="LogInButton_Click"/>
                 </StackPanel>
             </Grid>
             <rcp:RadBusyIndicator Name="LoadingIndicator" Content="LOADING" IsRunning="True" AnimationStyle="AnimationStyle5" Grid.Row="1"/>

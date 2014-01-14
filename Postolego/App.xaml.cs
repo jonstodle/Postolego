@@ -109,6 +109,9 @@ namespace Postolego {
             RootFrame = new PhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
+            // Assign uri mapper
+            RootFrame.UriMapper = new PostolegoMapper();
+
             // Handle navigation failures
             RootFrame.NavigationFailed += RootFrame_NavigationFailed;
 

@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="Resources/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <local:LocalizedStrings x:Key="LocalizedStrings"/>
+            <local:PostolegoData x:Key="PostolegoData"/>
             <Color x:Key="PostolegoLightColor">#FFD4D4D4</Color>
             <Color x:Key="PostolegoMediumColor">#FF757575</Color>
             <Color x:Key="PostolegoDarkColor">#FF222222</Color>
@@ -22,6 +23,8 @@
             <SolidColorBrush Color="{StaticResource PostolegoMediumColor}" x:Key="PostolegoMediumBrush"/>
             <SolidColorBrush Color="{StaticResource PostolegoDarkColor}" x:Key="PostolegoDarkBrush"/>
             <SolidColorBrush Color="{StaticResource PostolegoDeepColor}" x:Key="PostolegoDeepBrush"/>
+            
+            
         </ResourceDictionary>
     </Application.Resources>
     
