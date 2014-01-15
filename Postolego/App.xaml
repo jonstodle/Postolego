@@ -23,8 +23,6 @@
             <SolidColorBrush Color="{StaticResource PostolegoMediumColor}" x:Key="PostolegoMediumBrush"/>
             <SolidColorBrush Color="{StaticResource PostolegoDarkColor}" x:Key="PostolegoDarkBrush"/>
             <SolidColorBrush Color="{StaticResource PostolegoDeepColor}" x:Key="PostolegoDeepBrush"/>
-            
-            
         </ResourceDictionary>
     </Application.Resources>
     

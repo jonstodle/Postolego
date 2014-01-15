@@ -10,7 +10,6 @@ using Postolego.Resources;
 
 namespace Postolego {
     public partial class App : Application {
-        private UriMapper mapper;
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>

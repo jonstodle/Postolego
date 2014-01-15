@@ -36,7 +36,7 @@
                 </Border>
                 <TextBlock Text="Postolego" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Margin="12,0,0,0"/>
             </StackPanel>
-            <Grid Name="LoginGrid" Grid.Row="1" Visibility="{Binding Visibility, ElementName=LoadingIndicator, Converter={StaticResource RVC}}">
+            <Grid Name="LoginGrid" Grid.Row="1" Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="2*"/>
@@ -46,7 +46,13 @@
                     <Button Name="LogInButton" Content="Log in to Pocket" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeLarge}" Click="LogInButton_Click"/>
                 </StackPanel>
             </Grid>
-            <rcp:RadBusyIndicator Name="LoadingIndicator" Content="LOADING" IsRunning="True" AnimationStyle="AnimationStyle5" Grid.Row="1"/>
+            <rcp:RadBusyIndicator Name="LoadingIndicator" Content="LOADING" IsRunning="True" AnimationStyle="AnimationStyle5" Grid.Row="1" Visibility="Collapsed"/>
+            <StackPanel Name="ErrorPanel" VerticalAlignment="Center" Grid.Row="1">
+                <Image Source="/Assets/warning.png" Width="200"/>
+                <TextBlock Text="AN ERROR OCCURED" FontWeight="SemiBold" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                <TextBlock Name="ErrorText" Text="The server returns a message or the exception itself which is shown here." TextAlignment="Center" TextWrapping="Wrap" Margin="12,0"/>
+                <TextBlock Text="TAP TO RETRY" TextAlignment="Center" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Opacity=".5"/>
+            </StackPanel>
         </Grid>
     </Grid>
 

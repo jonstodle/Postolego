@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +40,7 @@ namespace PocketInterface {
             }
 
             if(!HasLoginUriString) {
-                var request = PocketWebRequest.CreatePocketHttp(RequestUri);
+                var request = HttpWebRequest.CreateHttp(RequestUri).MakePocketRequest();
                 using(var stream = await request.GetRequestStreamAsync()) {
                     var requestData = Encoding.UTF8.GetBytes(new JObject(new JProperty("consumer_key", ConsumerKey), new JProperty("redirect_uri", ReturnUri)).ToString());
                     await stream.WriteAsync(requestData, 0, requestData.Length);
@@ -61,7 +62,7 @@ namespace PocketInterface {
                 throw new Exception("You have to make the user login first");
             }
 
-            var request = PocketWebRequest.CreatePocketHttp(AuthorizeUri);
+            var request = HttpWebRequest.CreateHttp(AuthorizeUri).MakePocketRequest();
             using(var stream = await request.GetRequestStreamAsync()) {
                 var requestData = Encoding.UTF8.GetBytes(new JObject(new JProperty("consumer_key", ConsumerKey), new JProperty("code", RequestToken)).ToString());
                 await stream.WriteAsync(requestData, 0, requestData.Length);
