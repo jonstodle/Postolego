@@ -15,7 +15,8 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource PostolegoDeepColor}">
+    shell:SystemTray.BackgroundColor="{StaticResource PostolegoDeepColor}"
+    DataContext="{StaticResource PostolegoData}">
 
     <shell:SystemTray.ProgressIndicator>
         <shell:ProgressIndicator x:Name="ProgressBar" Text="POSTOLEGO" IsIndeterminate="False" IsVisible="True"/>

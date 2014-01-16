@@ -69,6 +69,10 @@ namespace Postolego {
             }
         }
 
+        public void Save() {
+            settings.Save();
+        }
+
         private void OnPropertyChanged(string changedProperty) {
             if(PropertyChanged != null) {
                 PropertyChanged(this, new PropertyChangedEventArgs(changedProperty));

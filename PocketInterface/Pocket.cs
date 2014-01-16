@@ -16,15 +16,22 @@ namespace PocketInterface {
         private const string AuthorizeUri = "https://getpocket.com/v3/oauth/authorize";
         private const string GetUri = "https://getpocket.com/v3/get";
 
-        private string ConsumerKey;
-        private string RequestToken;
-        private string AccessToken;
-        private string LoginUriString;
+        //private string ConsumerKey;
+        //private string RequestToken;
+        //private string AccessToken;
+        //private string LoginUriString;
+
+        public string ConsumerKey;
+        public string RequestToken;
+        public string AccessToken;
+        public string LoginUriString;
 
         public bool IsAuthenticated { get { return ConsumerKey != null && AccessToken != null; } }
         public bool HasLoginUriString { get { return LoginUriString != null; } }
         public string Username { private set; get; }
         public string TimeStamp { private set; get; }
+
+        public Pocket() { }
 
         public Pocket(string ConsumerKey) {
             if(string.IsNullOrWhiteSpace(ConsumerKey)) {
@@ -53,13 +60,12 @@ namespace PocketInterface {
                 }
                 LoginUriString = string.Format(LoginUri, RequestToken, ReturnUri);
             }
-
             return LoginUriString;
         }
 
         public async Task FinalizeUserLogin() {
             if(!HasLoginUriString) {
-                throw new Exception("You have to make the user login first");
+                throw new Exception("You have to make the user log in first");
             }
 
             var request = HttpWebRequest.CreateHttp(AuthorizeUri).MakePocketRequest();
@@ -105,7 +111,7 @@ namespace PocketInterface {
             }
         }
 
-        public async Task<List<PocketItem>> SearchItems(string Search, PocketRetrieveItem.States State = PocketRetrieveItem.States.Unread, PocketRetrieveItem.Favorites Favorite = PocketRetrieveItem.Favorites.Both, string Tag = null, PocketRetrieveItem.ContentTypes ContentType = PocketRetrieveItem.ContentTypes.All, PocketRetrieveItem.Sorts Sort = PocketRetrieveItem.Sorts.NoSort, PocketRetrieveItem.DetailTypes DetailType = PocketRetrieveItem.DetailTypes.NoType, string Domain = null, string Since = null, int Count = -1, int Offset = -1){
+        public async Task<List<PocketItem>> SearchItems(string Search, PocketRetrieveItem.States State = PocketRetrieveItem.States.Unread, PocketRetrieveItem.Favorites Favorite = PocketRetrieveItem.Favorites.Both, string Tag = null, PocketRetrieveItem.ContentTypes ContentType = PocketRetrieveItem.ContentTypes.All, PocketRetrieveItem.Sorts Sort = PocketRetrieveItem.Sorts.NoSort, PocketRetrieveItem.DetailTypes DetailType = PocketRetrieveItem.DetailTypes.NoType, string Domain = null, string Since = null, int Count = -1, int Offset = -1) {
             var retrieveObject = new PocketRetrieveItem(ConsumerKey, AccessToken, State, Favorite, Tag, ContentType, Sort, DetailType, Search, Domain, Since, Count, Offset);
             var request = PocketWebRequest.CreatePocketHttp(GetUri);
             using(var stream = await request.GetRequestStreamAsync()) {

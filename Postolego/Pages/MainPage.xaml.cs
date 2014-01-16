@@ -14,6 +14,13 @@ namespace Postolego.Pages {
             InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e) {
+            base.OnNavigatedTo(e);
+            if(NavigationContext.QueryString.Keys.Contains("RemoveBackEntry")) {
+                NavigationService.RemoveBackEntry();
+            }
+        }
+
         private void ApplicationBarMenuItem_Click(object sender, EventArgs e) {
 
         }
