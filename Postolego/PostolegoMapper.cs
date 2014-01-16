@@ -14,15 +14,12 @@ namespace Postolego {
             if(tempUri.Contains("postolego:")) {
                 if(tempUri.Contains("authorize")) {
                     return new Uri("/Pages/SignInPage.xaml", UriKind.Relative);
-                } else {
-                    return uri;
                 }
+            }
+            if((App.Current.Resources["PostolegoData"] as PostolegoData).PocketSession == null || !(App.Current.Resources["PostolegoData"] as PostolegoData).PocketSession.IsAuthenticated) {
+                return new Uri("/Pages/SignInPage.xaml", UriKind.Relative);
             } else {
-                if((App.Current.Resources["PostolegoData"] as PostolegoData).PocketSession == null || !(App.Current.Resources["PostolegoData"] as PostolegoData).PocketSession.IsAuthenticated) {
-                    return new Uri("/Pages/SignInPage.xaml", UriKind.Relative);
-                } else {
-                    return uri;
-                }
+                return uri;
             }
         }
     }
