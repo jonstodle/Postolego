@@ -68,8 +68,13 @@ namespace Postolego.Pages {
                     var uri = await (DataContext as PostolegoData).PocketSession.GenerateUserLoginUriString("postolego:authorized");
                     new WebBrowserTask { Uri = new Uri(uri, UriKind.Absolute) }.Show();
                 } catch(WebException ex) {
-                    var pocketError = ex.Response.Headers["X-Error"];
-                    SetVisibleElement(pocketError, Elements.ErrorMessage);
+                    string errorMessage;
+                    if(ex.Response.Headers.AllKeys.Contains("X-Error")) {
+                        errorMessage = ex.Response.Headers["X-Error"];
+                    } else {
+                        errorMessage = ex.Message;
+                    }
+                    SetVisibleElement(errorMessage, Elements.ErrorMessage);
                 }
             } else {
                 SetVisibleElement(NoNetworkString, Elements.ErrorMessage);
@@ -86,8 +91,13 @@ namespace Postolego.Pages {
                         SetVisibleElement("Something went wrong with the final login process.", Elements.ErrorMessage);
                     }
                 } catch(WebException ex) {
-                    var pocketError = ex.Response.Headers["X-Error"];
-                    SetVisibleElement(pocketError, Elements.ErrorMessage);
+                    string errorMessage;
+                    if(ex.Response.Headers.AllKeys.Contains("X-Error")) {
+                        errorMessage = ex.Response.Headers["X-Error"];
+                    } else {
+                        errorMessage = ex.Message;
+                    }
+                    SetVisibleElement(errorMessage, Elements.ErrorMessage);
                 }
             } else {
                 SetVisibleElement(NoNetworkString, Elements.ErrorMessage);

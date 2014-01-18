@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postolego", "Postolego\Post
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocketInterface", "PocketInterface\PocketInterface.csproj", "{3B611B33-97C7-4EA3-A72A-F17F5415C45A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestures", "Gestures\Gestures.csproj", "{EE12009D-04FE-4FCC-B870-63CB79A4156E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,18 @@ Global
 		{3B611B33-97C7-4EA3-A72A-F17F5415C45A}.Release|ARM.Build.0 = Release|ARM
 		{3B611B33-97C7-4EA3-A72A-F17F5415C45A}.Release|x86.ActiveCfg = Release|x86
 		{3B611B33-97C7-4EA3-A72A-F17F5415C45A}.Release|x86.Build.0 = Release|x86
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Debug|ARM.Build.0 = Debug|ARM
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Debug|x86.ActiveCfg = Debug|x86
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Debug|x86.Build.0 = Debug|x86
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Release|ARM.ActiveCfg = Release|ARM
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Release|ARM.Build.0 = Release|ARM
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Release|x86.ActiveCfg = Release|x86
+		{EE12009D-04FE-4FCC-B870-63CB79A4156E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

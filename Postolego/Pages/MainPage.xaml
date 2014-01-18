@@ -7,6 +7,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
+    xmlns:rcc="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:rcp="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:rcd="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
     xmlns:conv="clr-namespace:Postolego.Converters"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -60,7 +62,7 @@
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Opacity="{StaticResource PhonePivotUnselectedItemOpacity}"/>
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Opacity="{StaticResource PhonePivotUnselectedItemOpacity}" IsHitTestVisible="False"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -135,7 +137,7 @@
                             <Grid Background="{TemplateBinding Background}" Grid.RowSpan="2"/>
                             <Border Background="{StaticResource PostolegoDeepBrush}" BorderBrush="{StaticResource PostolegoLightBrush}" BorderThickness="0,0,0,1"/>
                             <primitives:PivotHeadersControl x:Name="HeadersListElement" FontSize="{StaticResource PhoneFontSizeLarge}" ItemContainerStyle="{StaticResource PostolegoPivotHeaderItemStyle}"/>
-                            <Button x:Name="MenuButton" Content="&#xE0C2;" FontFamily="Segoe UI Symbol" BorderThickness="0" HorizontalAlignment="Right" Style="{StaticResource MenuButtonStyle}" Margin="0,0,0,1"/>
+                            <Button x:Name="MenuButton" Content="&#xE0C2;" FontFamily="Segoe UI Symbol" BorderThickness="0" HorizontalAlignment="Right" Style="{StaticResource MenuButtonStyle}" Margin="0,0,0,1" Click="MenuButton_Click"/>
                             <ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="2"/>
                         </Grid>
                     </ControlTemplate>
@@ -169,15 +171,25 @@
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>
+        <rcp:RadWindow Name="NotificationWindow" Placement="TopCenter">
+            <rcp:RadWindow.OpenAnimation>
+                <rcc:RadAnimationGroup Duration="0:0:0.2">
+                    <rcc:RadFadeAnimation StartOpacity="0" EndOpacity="1"/>
+                    <rcc:RadMoveXAnimation StartX="-100" EndX="0"/>
+                </rcc:RadAnimationGroup>
+            </rcp:RadWindow.OpenAnimation>
+            <rcp:RadWindow.CloseAnimation>
+                <rcc:RadAnimationGroup Duration="0:0:0.2">
+                    <rcc:RadFadeAnimation StartOpacity="1" EndOpacity="0"/>
+                    <rcc:RadMoveXAnimation StartX="0" EndX="100"/>
+                </rcc:RadAnimationGroup>
+            </rcp:RadWindow.CloseAnimation>
+            <Grid Background="{StaticResource PhoneAccentBrush}" Width="{Binding ActualWidth, ElementName=LayoutRoot}" Tap="NotificationWindow_Tap" ManipulationCompleted="NotificationWindow_ManipulationCompleted">
+                <StackPanel Margin="24,12,24,6">
+                    <TextBlock Name="NotificationHeader" Text="HEADER" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold"/>
+                    <TextBlock Name="NotificationMessage" Text="This is an error message. It will be shown if we encounter any errors. It will also make it possible to launch a retry if that's desirable" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+        </rcp:RadWindow>
     </Grid>
-
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar Mode="Minimized" BackgroundColor="{StaticResource PostolegoDeepColor}">
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="remove ads" Click="ApplicationBarMenuItem_Click"/>
-                <shell:ApplicationBarMenuItem Text="settings" Click="ApplicationBarMenuItem_Click"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-
 </phone:PhoneApplicationPage>

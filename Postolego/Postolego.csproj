@@ -179,6 +179,10 @@
     <Reference Include="Telerik.Windows.Data, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gestures\Gestures.csproj">
+      <Project>{EE12009D-04FE-4FCC-B870-63CB79A4156E}</Project>
+      <Name>Gestures</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PocketInterface\PocketInterface.csproj">
       <Project>{3B611B33-97C7-4EA3-A72A-F17F5415C45A}</Project>
       <Name>PocketInterface</Name>

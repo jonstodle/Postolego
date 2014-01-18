@@ -51,3 +51,5 @@ C:\Dev\Postolego\Postolego\obj\Debug\Postolego.csproj.GenerateResource.Cache
 C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll
 C:\Dev\Postolego\Postolego\obj\Debug\Postolego.pdb
 C:\Dev\Postolego\Postolego\obj\Debug\XapCacheFile.xml
+C:\Dev\Postolego\Postolego\Bin\Debug\Gestures.dll
+C:\Dev\Postolego\Postolego\Bin\Debug\Gestures.pdb

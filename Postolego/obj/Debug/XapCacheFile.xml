@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Dev\Postolego\Postolego\Bin\Debug\Postolego_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="16.01.2014 21:48:41">
-  <file source="C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll" archivePath="Postolego.dll" lastWriteTime="16.01.2014 21:48:39" />
+﻿<xapCache source="C:\Dev\Postolego\Postolego\Bin\Debug\Postolego_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="18.01.2014 14:38:59">
+  <file source="C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll" archivePath="Postolego.dll" lastWriteTime="18.01.2014 14:38:57" />
   <file source="C:\Dev\Postolego\Postolego\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21.12.2013 18:16:38" />
   <file source="C:\Dev\Postolego\Postolego\Assets\refresh.png" archivePath="Assets\refresh.png" lastWriteTime="28.12.2013 01:25:36" />
   <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="21.12.2013 18:16:38" />
@@ -8,12 +8,13 @@
   <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="21.12.2013 18:16:38" />
   <file source="C:\Dev\Postolego\Postolego\Assets\warning.png" archivePath="Assets\warning.png" lastWriteTime="15.01.2014 21:16:44" />
   <file source="C:\Dev\Postolego\Postolego\ConsumerKey.txt" archivePath="ConsumerKey.txt" lastWriteTime="08.01.2014 22:06:13" />
-  <file source="C:\Dev\Postolego\Postolego\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="16.01.2014 21:48:40" />
+  <file source="C:\Dev\Postolego\Postolego\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="18.01.2014 14:29:24" />
   <file source="C:\Dev\Postolego\Postolego\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="21.12.2013 18:16:38" />
   <file source="C:\Dev\Postolego\Postolego\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="21.12.2013 18:16:38" />
+  <file source="C:\Dev\Postolego\Gestures\Bin\Debug\Gestures.dll" archivePath="Gestures.dll" lastWriteTime="18.01.2014 14:29:22" />
   <file source="C:\Dev\Postolego\packages\PhoneThemeManager.2.0\lib\windowsphone8\JeffWilcox.PhoneThemeManager.dll" archivePath="JeffWilcox.PhoneThemeManager.dll" lastWriteTime="05.01.2014 21:29:05" />
   <file source="C:\Dev\Postolego\packages\Newtonsoft.Json.5.0.8\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="03.01.2014 17:51:45" />
-  <file source="C:\Dev\Postolego\PocketInterface\Bin\Debug\PocketInterface.dll" archivePath="PocketInterface.dll" lastWriteTime="16.01.2014 21:48:38" />
+  <file source="C:\Dev\Postolego\PocketInterface\Bin\Debug\PocketInterface.dll" archivePath="PocketInterface.dll" lastWriteTime="18.01.2014 13:52:47" />
   <file source="C:\Program Files (x86)\Telerik\RadControls for Windows Phone 8 Q3 2013\Binaries\WindowsPhone\Telerik.Windows.Controls.Data.dll" archivePath="Telerik.Windows.Controls.Data.dll" lastWriteTime="27.11.2013 09:55:32" />
   <file source="C:\Program Files (x86)\Telerik\RadControls for Windows Phone 8 Q3 2013\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll" archivePath="Telerik.Windows.Controls.Primitives.dll" lastWriteTime="27.11.2013 09:55:06" />
   <file source="C:\Program Files (x86)\Telerik\RadControls for Windows Phone 8 Q3 2013\Binaries\WindowsPhone\Telerik.Windows.Core.dll" archivePath="Telerik.Windows.Core.dll" lastWriteTime="27.11.2013 09:55:00" />
