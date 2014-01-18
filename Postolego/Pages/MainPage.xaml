@@ -25,21 +25,6 @@
     </shell:SystemTray.ProgressIndicator>
 
     <phone:PhoneApplicationPage.Resources>
-        <DataTemplate x:Name="TextAndImage">
-            <Grid Margin="0,0,0,12">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Image Source="/Assets/ApplicationIcon.png" Width="100" Grid.RowSpan="2"/>
-                <TextBlock Text="Title" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold" VerticalAlignment="Bottom"/>
-                <TextBlock Text="https://reallylongurltoawebsite.com/somethingafter" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource PostolegoMediumBrush}" VerticalAlignment="Top"/>
-            </Grid>
-        </DataTemplate>
         <Style x:Key="PostolegoPivotHeaderItemStyle" TargetType="primitives:PivotHeaderItem">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Padding" Value="21,0,1,0"/>
@@ -144,6 +129,24 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <DataTemplate x:Name="TextAndImage">
+            <Grid Margin="0,0,0,12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/ApplicationIcon.png" Width="100" Grid.RowSpan="2"/>
+                <TextBlock Text="Title" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold" VerticalAlignment="Bottom"/>
+                <TextBlock Text="https://reallylongurltoawebsite.com/somethingafter" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource PostolegoMediumBrush}" VerticalAlignment="Top"/>
+            </Grid>
+        </DataTemplate>
+        <Style TargetType="rcd:RadJumpList">
+            
+        </Style>
     </phone:PhoneApplicationPage.Resources>
 
     <Grid x:Name="LayoutRoot">
@@ -153,21 +156,26 @@
         </Grid.RowDefinitions>
 
         <Grid x:Name="ContentPanel" Grid.Row="1">
-            <!--<TextBlock Text="{Binding SelectedIndex, ElementName=MainPivot, Converter={StaticResource TDS}}" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" Margin="12,0,0,0"/>-->
             <phone:Pivot Name="MainPivot" Grid.Row="1">
                 <phone:Pivot.HeaderTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                     </DataTemplate>
                 </phone:Pivot.HeaderTemplate>
-                <phone:PivotItem Header="UNREAD" Margin="12,0">
-
+                <phone:PivotItem Header="UNREAD" Margin="0">
+                    <rcd:RadJumpList Name="UnreadJumpList">
+                        
+                    </rcd:RadJumpList>
                 </phone:PivotItem>
-                <phone:PivotItem Header="FAVORITES" Margin="12,0">
-
+                <phone:PivotItem Header="FAVORITES" Margin="0">
+                    <rcd:RadJumpList Name="FavoritesJumpList">
+                        
+                    </rcd:RadJumpList>
                 </phone:PivotItem>
-                <phone:PivotItem Header="ARCHIVE" Margin="12,0">
-
+                <phone:PivotItem Header="ARCHIVE" Margin="0">
+                    <rcd:RadJumpList Name="ArchiveJumpList">
+                        
+                    </rcd:RadJumpList>
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>
