@@ -10,6 +10,9 @@ using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using Gestures;
 using System.Windows.Threading;
+using PocketInterface;
+using System.Collections.ObjectModel;
+using Microsoft.Phone.Net.NetworkInformation;
 
 namespace Postolego.Pages {
     public partial class MainPage : PhoneApplicationPage {
@@ -24,6 +27,78 @@ namespace Postolego.Pages {
                 NavigationService.RemoveBackEntry();
             }
         }
+
+        #region Pocket actions
+        private async void RetrieveUnread() {
+            if(NetworkInterface.GetIsNetworkAvailable()) {
+                try {
+                    var unreadList = (DataContext as PostolegoData).UnreadList;
+                    var returnedList = await (DataContext as PostolegoData).PocketSession.RetrieveItems(PocketInterface.PocketRetrieveItem.States.Unread, Since: (DataContext as PostolegoData).PocketSession.TimeStamp);
+                    foreach(var i in returnedList) {
+                        unreadList.UpdateOrAdd(i);
+                    }
+                    for(int i = unreadList.Count - 1; i > -1; i--) {
+                        var item = unreadList[i];
+                        if(item.Favorite == 1) {
+                            (DataContext as PostolegoData).FavoritesList.Add(item);
+                        }
+                        if(item.Status == 1) {
+                            (DataContext as PostolegoData).ArchiveList.Add(item);
+                            unreadList.RemoveAt(i);
+                        } else if(item.Status == 2) {
+                            unreadList.RemoveAt(i);
+                        }
+                    }
+                } catch(WebException ex) {
+                    //todo
+                }
+            }
+        }
+
+        private void RetrieveFavorites() {
+
+        }
+
+        private void RetrieveArchive() {
+
+        }
+
+        private void CheckAndPerformActions(ObservableCollection<PocketItem> list) {
+            for(int i = list.Count - 1; i > -1; i--) {
+                var item = list[i];
+                var removeItem = false;
+                if(item.Favorite == 1) {
+                    (DataContext as PostolegoData).FavoritesList.Add(item);
+                }
+                if(item.Status == 1) {
+                    (DataContext as PostolegoData).ArchiveList.Add(item);
+                    removeItem = true;
+                } else if(item.Status == 2) {
+                    removeItem = true;
+                }
+            }
+        }
+        #endregion
+
+        #region List actions
+
+        #endregion
+
+        #region Pivot
+        bool[] HasRefreshed = { false, false, false };
+
+        private void MainPivot_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            if(MainPivot.SelectedIndex == 0 && !HasRefreshed[0]) {
+                LoadingLabel.Visibility = System.Windows.Visibility.Visible;
+                RetrieveUnread();
+                LoadingLabel.Visibility = System.Windows.Visibility.Collapsed;
+            } else if(MainPivot.SelectedIndex == 1 && !HasRefreshed[1]) {
+
+            } else if(MainPivot.SelectedIndex == 2 && !HasRefreshed[2]) {
+
+            }
+        }
+        #endregion
 
         #region Notificaition Window
         DispatcherTimer NotificationTimer = new DispatcherTimer();

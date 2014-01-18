@@ -30,7 +30,7 @@ namespace Postolego {
         public ObservableCollection<PocketItem> UnreadList {
             get {
                 if(!settings.Contains("UnreadList")) {
-                    settings["UnreadList"] = null;
+                    settings["UnreadList"] = new ObservableCollection<PocketItem>();
                 }
                 return (ObservableCollection<PocketItem>)settings["UnreadList"];
             }
@@ -44,7 +44,7 @@ namespace Postolego {
         public ObservableCollection<PocketItem> FavoritesList {
             get {
                 if(!settings.Contains("FavoritesList")) {
-                    settings["FavoritesList"] = null;
+                    settings["FavoritesList"] = new ObservableCollection<PocketItem>();
                 }
                 return (ObservableCollection<PocketItem>)settings["FavoritesList"];
             }
@@ -58,7 +58,7 @@ namespace Postolego {
         public ObservableCollection<PocketItem> ArchiveList {
             get {
                 if(!settings.Contains("ArchiveList")) {
-                    settings["ArchiveList"] = null;
+                    settings["ArchiveList"] = new ObservableCollection<PocketItem>();
                 }
                 return (ObservableCollection<PocketItem>)settings["ArchiveList"];
             }

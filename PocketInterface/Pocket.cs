@@ -31,7 +31,9 @@ namespace PocketInterface {
         public string Username { private set; get; }
         public string TimeStamp { private set; get; }
 
-        public Pocket() { }
+        public Pocket() {
+            TimeStamp = "0";
+        }
 
         public Pocket(string ConsumerKey) {
             if(string.IsNullOrWhiteSpace(ConsumerKey)) {
@@ -87,7 +89,7 @@ namespace PocketInterface {
         #region Retrieve Items
         public async Task<List<PocketItem>> RetrieveItems(PocketRetrieveItem.States State = PocketRetrieveItem.States.Unread, PocketRetrieveItem.Favorites Favorite = PocketRetrieveItem.Favorites.Both, string Tag = null, PocketRetrieveItem.ContentTypes ContentType = PocketRetrieveItem.ContentTypes.All, PocketRetrieveItem.Sorts Sort = PocketRetrieveItem.Sorts.NoSort, PocketRetrieveItem.DetailTypes DetailType = PocketRetrieveItem.DetailTypes.NoType, string Domain = null, string Since = null, int Count = -1, int Offset = -1) {
             var retrieveObject = new PocketRetrieveItem(ConsumerKey, AccessToken, State, Favorite, Tag, ContentType, Sort, DetailType, Domain: Domain, Since: Since, Count: Count, Offset: Offset);
-            var request = PocketWebRequest.CreatePocketHttp(GetUri);
+            var request = HttpWebRequest.CreateHttp(GetUri).MakePocketRequest();
             using(var stream = await request.GetRequestStreamAsync()) {
                 var retrieveData = Encoding.UTF8.GetBytes(retrieveObject.GetJsonString());
                 await stream.WriteAsync(retrieveData, 0, retrieveData.Length);
@@ -102,9 +104,10 @@ namespace PocketInterface {
             var list = responseData["list"] as JObject;
             if(list != null) {
                 var returnList = new List<PocketItem>();
-                foreach(var i in list) {
-                    returnList.Add(await JsonConvert.DeserializeObjectAsync<PocketItem>(i.ToString()));
+                foreach(var i in list.Properties()) {
+                    returnList.Add(await JsonConvert.DeserializeObjectAsync<PocketItem>(i.Value.ToString()));
                 }
+
                 return returnList;
             } else {
                 return null;
@@ -113,7 +116,7 @@ namespace PocketInterface {
 
         public async Task<List<PocketItem>> SearchItems(string Search, PocketRetrieveItem.States State = PocketRetrieveItem.States.Unread, PocketRetrieveItem.Favorites Favorite = PocketRetrieveItem.Favorites.Both, string Tag = null, PocketRetrieveItem.ContentTypes ContentType = PocketRetrieveItem.ContentTypes.All, PocketRetrieveItem.Sorts Sort = PocketRetrieveItem.Sorts.NoSort, PocketRetrieveItem.DetailTypes DetailType = PocketRetrieveItem.DetailTypes.NoType, string Domain = null, string Since = null, int Count = -1, int Offset = -1) {
             var retrieveObject = new PocketRetrieveItem(ConsumerKey, AccessToken, State, Favorite, Tag, ContentType, Sort, DetailType, Search, Domain, Since, Count, Offset);
-            var request = PocketWebRequest.CreatePocketHttp(GetUri);
+            var request = HttpWebRequest.CreateHttp(GetUri).MakePocketRequest();
             using(var stream = await request.GetRequestStreamAsync()) {
                 var retrieveData = Encoding.UTF8.GetBytes(retrieveObject.GetJsonString());
                 await stream.WriteAsync(retrieveData, 0, retrieveData.Length);

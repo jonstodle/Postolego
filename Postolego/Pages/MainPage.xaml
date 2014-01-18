@@ -140,12 +140,12 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Image Source="/Assets/ApplicationIcon.png" Width="100" Grid.RowSpan="2"/>
-                <TextBlock Text="Title" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold" VerticalAlignment="Bottom"/>
-                <TextBlock Text="https://reallylongurltoawebsite.com/somethingafter" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource PostolegoMediumBrush}" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding GivenTitle}" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold" VerticalAlignment="Bottom"/>
+                <TextBlock Text="{Binding ResolvedUrl}" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource PostolegoMediumBrush}" VerticalAlignment="Top"/>
             </Grid>
         </DataTemplate>
         <Style TargetType="rcd:RadJumpList">
-            
+            <Setter Property="ItemTemplate" Value="{StaticResource TextAndImage}"/>
         </Style>
     </phone:PhoneApplicationPage.Resources>
 
@@ -156,24 +156,25 @@
         </Grid.RowDefinitions>
 
         <Grid x:Name="ContentPanel" Grid.Row="1">
-            <phone:Pivot Name="MainPivot" Grid.Row="1">
+            <TextBlock Name="LoadingLabel" Text="LOADING UNREAD" Margin="20,50,20,0" Visibility="Collapsed"/>
+            <phone:Pivot Name="MainPivot" Grid.Row="1" SelectionChanged="MainPivot_SelectionChanged">
                 <phone:Pivot.HeaderTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                     </DataTemplate>
                 </phone:Pivot.HeaderTemplate>
                 <phone:PivotItem Header="UNREAD" Margin="0">
-                    <rcd:RadJumpList Name="UnreadJumpList">
+                    <rcd:RadJumpList Name="UnreadJumpList" ItemsSource="{Binding UnreadList}">
                         
                     </rcd:RadJumpList>
                 </phone:PivotItem>
                 <phone:PivotItem Header="FAVORITES" Margin="0">
-                    <rcd:RadJumpList Name="FavoritesJumpList">
+                    <rcd:RadJumpList Name="FavoritesJumpList" ItemsSource="{Binding FavoritesList}">
                         
                     </rcd:RadJumpList>
                 </phone:PivotItem>
                 <phone:PivotItem Header="ARCHIVE" Margin="0">
-                    <rcd:RadJumpList Name="ArchiveJumpList">
+                    <rcd:RadJumpList Name="ArchiveJumpList" ItemsSource="{Binding ArchiveList}">
                         
                     </rcd:RadJumpList>
                 </phone:PivotItem>

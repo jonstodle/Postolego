@@ -9,6 +9,7 @@ C:\Dev\Postolego\Postolego\Bin\Debug\Postolego.pdb
 C:\Dev\Postolego\Postolego\Bin\Debug\AppManifest.xaml
 C:\Dev\Postolego\Postolego\Bin\Debug\Properties\WMAppManifest.xml
 C:\Dev\Postolego\Postolego\Bin\Debug\Postolego_Debug_AnyCPU.xap
+C:\Dev\Postolego\Postolego\Bin\Debug\Gestures.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\JeffWilcox.PhoneThemeManager.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\Newtonsoft.Json.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\PocketInterface.dll
@@ -17,6 +18,7 @@ C:\Dev\Postolego\Postolego\Bin\Debug\Telerik.Windows.Controls.Primitives.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\Telerik.Windows.Core.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\Telerik.Windows.Data.dll
 C:\Dev\Postolego\Postolego\Bin\Debug\System.Windows.Interactivity.dll
+C:\Dev\Postolego\Postolego\Bin\Debug\Gestures.pdb
 C:\Dev\Postolego\Postolego\Bin\Debug\PocketInterface.pdb
 C:\Dev\Postolego\Postolego\Bin\Debug\JeffWilcox.PhoneThemeManager.pdb
 C:\Dev\Postolego\Postolego\Bin\Debug\Newtonsoft.Json.xml
@@ -51,5 +53,3 @@ C:\Dev\Postolego\Postolego\obj\Debug\Postolego.csproj.GenerateResource.Cache
 C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll
 C:\Dev\Postolego\Postolego\obj\Debug\Postolego.pdb
 C:\Dev\Postolego\Postolego\obj\Debug\XapCacheFile.xml
-C:\Dev\Postolego\Postolego\Bin\Debug\Gestures.dll
-C:\Dev\Postolego\Postolego\Bin\Debug\Gestures.pdb
