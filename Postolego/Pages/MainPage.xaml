@@ -160,22 +160,25 @@
             <phone:Pivot Name="MainPivot" Grid.Row="1" SelectionChanged="MainPivot_SelectionChanged">
                 <phone:Pivot.HeaderTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding HeaderText}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                            <rcp:RadBusyIndicator Content="{x:Null}" IsRunning="{Binding IsLoading}" Margin="6,0,0,0" Height="50" VerticalAlignment="Bottom" Foreground="{StaticResource PhoneForegroundBrush}" AnimationStyle="AnimationStyle7"/>
+                        </StackPanel>
                     </DataTemplate>
                 </phone:Pivot.HeaderTemplate>
-                <phone:PivotItem Header="UNREAD" Margin="0">
+                <phone:PivotItem Name="UnreadPivotItem" Header="UNREAD" Margin="0">
                     <rcd:RadJumpList Name="UnreadJumpList" ItemsSource="{Binding UnreadList}">
-                        
+
                     </rcd:RadJumpList>
                 </phone:PivotItem>
-                <phone:PivotItem Header="FAVORITES" Margin="0">
+                <phone:PivotItem Name="FavoritesPivotItem" Header="FAVORITES" Margin="0">
                     <rcd:RadJumpList Name="FavoritesJumpList" ItemsSource="{Binding FavoritesList}">
-                        
+
                     </rcd:RadJumpList>
                 </phone:PivotItem>
-                <phone:PivotItem Header="ARCHIVE" Margin="0">
+                <phone:PivotItem Name="ArchivePivotItem" Header="ARCHIVE" Margin="0">
                     <rcd:RadJumpList Name="ArchiveJumpList" ItemsSource="{Binding ArchiveList}">
-                        
+
                     </rcd:RadJumpList>
                 </phone:PivotItem>
             </phone:Pivot>
@@ -195,8 +198,8 @@
             </rcp:RadWindow.CloseAnimation>
             <Grid Background="{StaticResource PhoneAccentBrush}" Width="{Binding ActualWidth, ElementName=LayoutRoot}" Tap="NotificationWindow_Tap" ManipulationCompleted="NotificationWindow_ManipulationCompleted">
                 <StackPanel Margin="24,12,24,6">
-                    <TextBlock Name="NotificationHeader" Text="HEADER" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold"/>
-                    <TextBlock Name="NotificationMessage" Text="This is an error message. It will be shown if we encounter any errors. It will also make it possible to launch a retry if that's desirable" TextWrapping="Wrap"/>
+                    <TextBlock Name="NotificationHeader" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                    <TextBlock Name="NotificationMessage" TextWrapping="Wrap"/>
                 </StackPanel>
             </Grid>
         </rcp:RadWindow>

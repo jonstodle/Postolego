@@ -29,6 +29,7 @@ namespace PocketInterface {
                 if(item.ResolvedId == oc[i].ResolvedId) {
                     oc[i] = item;
                     item = null;
+                    break;
                 }
             }
             if(item != null) oc.Add(item);

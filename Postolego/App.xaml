@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:nav="clr-namespace:System.Windows.Navigation;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:local="clr-namespace:Postolego">
 
     <!--Application Resources-->
@@ -23,6 +24,12 @@
             <SolidColorBrush Color="{StaticResource PostolegoMediumColor}" x:Key="PostolegoMediumBrush"/>
             <SolidColorBrush Color="{StaticResource PostolegoDarkColor}" x:Key="PostolegoDarkBrush"/>
             <SolidColorBrush Color="{StaticResource PostolegoDeepColor}" x:Key="PostolegoDeepBrush"/>
+            
+            <!--Default strings-->
+            <sys:String x:Key="GenericErrorHeader">AN ERROR OCCURED</sys:String>
+            
+            <sys:String x:Key="NoNetworkHeader">NO NETWORK AVAILABLE</sys:String>
+            <sys:String x:Key="NoNetworkMessage">No network connection is currently available</sys:String>
         </ResourceDictionary>
     </Application.Resources>
     

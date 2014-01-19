@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Dev\Postolego\Postolego\Bin\Debug\Postolego_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="18.01.2014 20:49:47">
-  <file source="C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll" archivePath="Postolego.dll" lastWriteTime="18.01.2014 20:49:45" />
+﻿<xapCache source="C:\Dev\Postolego\Postolego\Bin\Debug\Postolego_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="19.01.2014 23:14:03">
+  <file source="C:\Dev\Postolego\Postolego\obj\Debug\Postolego.dll" archivePath="Postolego.dll" lastWriteTime="19.01.2014 23:14:01" />
   <file source="C:\Dev\Postolego\Postolego\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21.12.2013 18:16:38" />
   <file source="C:\Dev\Postolego\Postolego\Assets\refresh.png" archivePath="Assets\refresh.png" lastWriteTime="28.12.2013 01:25:36" />
   <file source="C:\Dev\Postolego\Postolego\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="21.12.2013 18:16:38" />
@@ -14,7 +14,7 @@
   <file source="C:\Dev\Postolego\Gestures\Bin\Debug\Gestures.dll" archivePath="Gestures.dll" lastWriteTime="18.01.2014 20:37:03" />
   <file source="C:\Dev\Postolego\packages\PhoneThemeManager.2.0\lib\windowsphone8\JeffWilcox.PhoneThemeManager.dll" archivePath="JeffWilcox.PhoneThemeManager.dll" lastWriteTime="05.01.2014 21:29:05" />
   <file source="C:\Dev\Postolego\packages\Newtonsoft.Json.5.0.8\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="03.01.2014 17:51:45" />
-  <file source="C:\Dev\Postolego\PocketInterface\Bin\Debug\PocketInterface.dll" archivePath="PocketInterface.dll" lastWriteTime="18.01.2014 20:37:03" />
+  <file source="C:\Dev\Postolego\PocketInterface\Bin\Debug\PocketInterface.dll" archivePath="PocketInterface.dll" lastWriteTime="19.01.2014 22:05:23" />
   <file source="C:\Program Files (x86)\Telerik\RadControls for Windows Phone 8 Q3 2013\Binaries\WindowsPhone\Telerik.Windows.Controls.Data.dll" archivePath="Telerik.Windows.Controls.Data.dll" lastWriteTime="27.11.2013 09:55:32" />
   <file source="C:\Program Files (x86)\Telerik\RadControls for Windows Phone 8 Q3 2013\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll" archivePath="Telerik.Windows.Controls.Primitives.dll" lastWriteTime="27.11.2013 09:55:06" />
   <file source="C:\Program Files (x86)\Telerik\RadControls for Windows Phone 8 Q3 2013\Binaries\WindowsPhone\Telerik.Windows.Core.dll" archivePath="Telerik.Windows.Core.dll" lastWriteTime="27.11.2013 09:55:00" />
